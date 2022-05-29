@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import List from "./components/List";
+import { Route, Routes } from "react-router-dom";
+import New from "./components/New";
+import Update from "./components/Update";
+import FavList from "./components/FavList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/list" element={<List />} />
+        <Route path="/new" element={<New />} />
+        <Route path="/update" element={<Update />} />
+        <Route path="/favlist" element={<FavList />} />
+      </Routes>
+    </>
   );
 }
 
